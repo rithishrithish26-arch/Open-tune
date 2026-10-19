@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <title>OpenTune - Free Music</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #101010;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 22px;
+      padding-bottom: 130px;
+    }
+    header { font-size: 28px; font-weight: bold; }
+    header span { color: #1ed760; }
+    .tagline { color: #aaa; margin-top: 8px; }
+    h2 { margin-top: 30px; }
+    .card {
+      background: #202020;
+      padding: 18px;
+      border-radius: 16px;
+      margin-top: 16px;
+    }
+    .cover {
+      height: 150px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1ed760, #14532d, #111);
+      display: grid;
+      place-items: center;
+      font-size: 55px;
+    }
+    .song-title { font-size: 20px; font-weight: bold; margin-top: 15px; }
+    .artist { color: #aaa; margin-top: 6px; }
+    button {
+      background: #1ed760;
+      color: #111;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    .player {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #202020;
+      padding: 15px 20px;
+      border-top: 1px solid #444;
+    }
+    audio { width: 100%; margin-top: 10px; }
+    .note { color: #aaa; font-size: 13px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>🎵 Open<span>Tune</span></header>
+  <p class="tagline">Your music. Your vibe. Free to explore.</p>
+
+  <h2>Discover music</h2>
+
+  <div class="card">
+    <div class="cover">🎧</div>
+    <div class="song-title">SoundHelix Song 1</div>
+    <div class="artist">Sample audio • SoundHelix</div>
+    <button onclick="playSong()">▶ Play song</button>
+    <p class="note">
+      Sample audio for testing. This is not a full commercial music catalogue.
+    </p>
+  </div>
+
+  <div class="player">
+    <strong id="nowPlaying">OpenTune Player</strong>
+    <audio id="audio" controls preload="none">
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+
+  <script>
+    function playSong() {
+      const audio = document.getElementById("audio");
+      document.getElementById("nowPlaying").textContent =
+        "Playing: SoundHelix Song 1";
+      audio.play().catch(() => {
+        alert("Playback could not start. Check your internet connection and tap Play in the audio controls.");
+      });
+    }
+  </script>
+</body>
+</html>
