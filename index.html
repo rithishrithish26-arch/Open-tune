@@ -5,153 +5,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101010">
-<title>OpenTune | Your Sound</title>
+<title>OpenTune - Free Music</title>
 <style>
-:root {
-  --bg:#101010;
-  --panel:#202020;
-  --green:#1ed760;
-  --muted:#aaa;
-}
-* { box-sizing:border-box; }
-body {
-  margin:0;
-  background:var(--bg);
-  color:white;
-  font-family:Arial, sans-serif;
-  padding-bottom:120px;
-}
-header {
-  padding:22px 18px 14px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.logo { font-size:25px; font-weight:800; }
-.logo span { color:var(--green); }
-.avatar {
-  background:#333;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-}
-main { padding:0 16px; }
-h1 { font-size:27px; margin:14px 0 18px; }
-h2 { font-size:20px; margin:26px 0 14px; }
-.subtitle { color:var(--muted); font-size:14px; }
-.search {
-  width:100%;
-  padding:15px;
-  border:0;
-  border-radius:12px;
-  background:#292929;
-  color:white;
-  font-size:16px;
-  outline-color:var(--green);
-}
-.filters {
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  padding:14px 0 4px;
-}
-.chip {
-  flex-shrink:0;
-  padding:10px 15px;
-  border:1px solid #444;
-  border-radius:22px;
-  background:#222;
-  color:white;
-}
-.chip.active {
-  background:var(--green);
-  color:#101010;
-  border-color:var(--green);
-  font-weight:bold;
-}
-.hero {
-  margin-top:20px;
-  border-radius:18px;
-  padding:23px;
-  background:linear-gradient(135deg,#164d2b,#087b43,#102117);
-}
-.hero small { color:#d5ffe1; }
-.hero h2 { font-size:28px; margin:12px 0; }
-.hero p { color:#e0eee4; line-height:1.5; }
-button { cursor:pointer; }
-.play-main {
-  background:var(--green);
-  border:0;
-  border-radius:24px;
-  padding:12px 20px;
-  font-weight:bold;
-}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px;
-}
-.card {
-  background:#1d1d1d;
-  padding:11px;
-  border-radius:14px;
-  min-width:0;
-}
-.art {
-  aspect-ratio:1;
-  border-radius:10px;
-  display:grid;
-  place-items:center;
-  font-size:44px;
-}
-.art1 { background:linear-gradient(135deg,#ff9f43,#6c2c91); }
-.art2 { background:linear-gradient(135deg,#06beb6,#283c86); }
-.art3 { background:linear-gradient(135deg,#f953c6,#b91d73); }
-.art4 { background:linear-gradient(135deg,#c6ffdd,#fbd786,#f7797d); }
-.art5 { background:linear-gradient(135deg,#4776e6,#8e54e9); }
-.art6 { background:linear-gradient(135deg,#f7971e,#ffd200); }
-.card h3 { font-size:15px; margin:12px 0 5px; }
-.card p { color:var(--muted); font-size:12px; margin:0; }
-.track-button {
-  width:100%;
-  padding:10px;
-  margin-top:12px;
-  border:0;
-  border-radius:20px;
-  background:#303030;
-  color:white;
-}
-.track-button:active { background:var(--green); color:#111; }
-.empty { color:var(--muted); grid-column:1/-1; }
-.player {
-  position:fixed;
-  z-index:5;
-  bottom:0;
-  left:0;
-  right:0;
-  background:#181818;
-  border-top:1px solid #383838;
-  padding:12px 15px max(12px,env(safe-area-inset-bottom));
-}
-.player-top {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-bottom:7px;
-}
-.player-title { font-size:14px; font-weight:bold; }
-.player-sub { font-size:12px; color:var(--muted); margin-top:4px; }
-audio { width:100%; height:38px; }
-footer {
-  text-align:center;
-  color:#888;
-  font-size:12px;
-  padding:25px 10px;
-}
-[hidden] { display:none !important; }
+*{box-sizing:border-box}
+body{margin:0;background:#101010;color:#fff;font-family:Arial,sans-serif;padding-bottom:125px}
+header{padding:22px 18px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:26px;font-weight:800}
+.logo span{color:#1ed760}
+.avatar{background:#292929;border-radius:50%;width:40px;height:40px;display:grid;place-items:center}
+main{padding:0 16px}
+.muted{color:#aaa;font-size:14px}
+h1{font-size:27px;margin:12px 0 20px}
+h2{font-size:20px;margin:27px 0 14px}
+.search{width:100%;padding:15px;border:0;border-radius:12px;background:#292929;color:white;font-size:16px}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:14px 0}
+.chip{flex-shrink:0;padding:10px 15px;border:1px solid #444;border-radius:25px;background:#222;color:white}
+.chip.active{background:#1ed760;color:#111;border-color:#1ed760;font-weight:bold}
+.hero{margin-top:12px;border-radius:18px;padding:22px;background:linear-gradient(135deg,#14532d,#087b43,#102117)}
+.hero small{color:#d6ffe1}
+.hero h2{font-size:29px;margin:12px 0}
+.hero p{line-height:1.5;color:#e0eee4}
+button{cursor:pointer}
+.primary{background:#1ed760;color:#111;border:0;border-radius:25px;padding:12px 20px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.card{background:#1e1e1e;border-radius:14px;padding:11px;min-width:0}
+.art{aspect-ratio:1;border-radius:10px;display:grid;place-items:center;font-size:43px}
+.a1{background:linear-gradient(135deg,#ff9f43,#6c2c91)}
+.a2{background:linear-gradient(135deg,#06beb6,#283c86)}
+.a3{background:linear-gradient(135deg,#f953c6,#b91d73)}
+.a4{background:linear-gradient(135deg,#c6ffdd,#fbd786,#f7797d)}
+.a5{background:linear-gradient(135deg,#4776e6,#8e54e9)}
+.a6{background:linear-gradient(135deg,#f7971e,#ffd200)}
+.card h3{font-size:15px;margin:12px 0 5px}
+.card p{color:#aaa;font-size:12px;margin:0}
+.track{width:100%;margin-top:12px;border:0;border-radius:22px;padding:10px;background:#303030;color:white}
+.track:active{background:#1ed760;color:#111}
+.player{position:fixed;z-index:5;bottom:0;left:0;right:0;background:#181818;border-top:1px solid #383838;padding:12px 15px max(12px,env(safe-area-inset-bottom))}
+.player-title{font-size:14px;font-weight:bold}
+.player-sub{font-size:12px;color:#aaa;margin:5px 0}
+audio{width:100%;height:38px}
+footer{text-align:center;color:#888;font-size:12px;padding:25px 5px}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -161,14 +55,14 @@ footer {
 </header>
 
 <main>
-  <p class="subtitle">YOUR SOUND. YOUR WORLD.</p>
+  <p class="muted">YOUR SOUND. YOUR WORLD.</p>
   <h1>Good music, good mood ✨</h1>
 
   <input id="search" class="search" type="search"
-    placeholder="🔍 Search songs or moods..."
+    placeholder="🔍 Search songs..."
     aria-label="Search songs">
 
-  <div class="filters" aria-label="Music categories">
+  <div class="filters">
     <button class="chip active" data-filter="All">All</button>
     <button class="chip" data-filter="Chill">Chill</button>
     <button class="chip" data-filter="Energy">Energy</button>
@@ -179,129 +73,106 @@ footer {
   <section class="hero">
     <small>WELCOME TO OPENTUNE</small>
     <h2>Find your rhythm.</h2>
-    <p>Discover your next favourite sound, one track at a time.</p>
-    <button class="play-main" id="featured">▶ Play sample</button>
+    <p>Discover a new sound for every mood.</p>
+    <button class="primary" id="featured">▶ Play sample</button>
   </section>
 
   <h2>Made for your mood</h2>
   <div class="grid" id="tracks">
     <article class="card" data-title="Golden Hour" data-mood="Chill">
-      <div class="art art1">🌅</div>
-      <h3>Golden Hour</h3>
-      <p>Chill • Sample audio</p>
-      <button class="track-button" data-song="0">▶ Play</button>
+      <div class="art a1">🌅</div>
+      <h3>Golden Hour</h3><p>Chill • Demo audio</p>
+      <button class="track" data-song="0">▶ Play</button>
     </article>
     <article class="card" data-title="Blue Horizon" data-mood="Dreamy">
-      <div class="art art2">🌊</div>
-      <h3>Blue Horizon</h3>
-      <p>Dreamy • Sample audio</p>
-      <button class="track-button" data-song="1">▶ Play</button>
+      <div class="art a2">🌊</div>
+      <h3>Blue Horizon</h3><p>Dreamy • Demo audio</p>
+      <button class="track" data-song="1">▶ Play</button>
     </article>
     <article class="card" data-title="Neon Nights" data-mood="Energy">
-      <div class="art art3">🌃</div>
-      <h3>Neon Nights</h3>
-      <p>Energy • Sample audio</p>
-      <button class="track-button" data-song="2">▶ Play</button>
+      <div class="art a3">🌃</div>
+      <h3>Neon Nights</h3><p>Energy • Demo audio</p>
+      <button class="track" data-song="2">▶ Play</button>
     </article>
     <article class="card" data-title="Soft Clouds" data-mood="Chill">
-      <div class="art art4">☁️</div>
-      <h3>Soft Clouds</h3>
-      <p>Chill • Sample audio</p>
-      <button class="track-button" data-song="3">▶ Play</button>
+      <div class="art a4">☁️</div>
+      <h3>Soft Clouds</h3><p>Chill • Demo audio</p>
+      <button class="track" data-song="3">▶ Play</button>
     </article>
     <article class="card" data-title="Deep Focus" data-mood="Focus">
-      <div class="art art5">🌌</div>
-      <h3>Deep Focus</h3>
-      <p>Focus • Sample audio</p>
-      <button class="track-button" data-song="4">▶ Play</button>
+      <div class="art a5">🌌</div>
+      <h3>Deep Focus</h3><p>Focus • Demo audio</p>
+      <button class="track" data-song="4">▶ Play</button>
     </article>
     <article class="card" data-title="Sunrise Drive" data-mood="Energy">
-      <div class="art art6">🌞</div>
-      <h3>Sunrise Drive</h3>
-      <p>Energy • Sample audio</p>
-      <button class="track-button" data-song="5">▶ Play</button>
+      <div class="art a6">🌞</div>
+      <h3>Sunrise Drive</h3><p>Energy • Demo audio</p>
+      <button class="track" data-song="5">▶ Play</button>
     </article>
   </div>
-
-  <p id="noResults" class="empty" hidden>No matching tracks. Try another search.</p>
-
-  <footer>OpenTune • A free music-player demo</footer>
+  <p id="noResults" class="muted" hidden>No matching songs found.</p>
+  <footer>OpenTune • Free music-player demo</footer>
 </main>
 
 <div class="player">
-  <div class="player-top">
-    <div>
-      <div class="player-title" id="nowPlaying">Choose a sample track</div>
-      <div class="player-sub" id="artist">OpenTune demo player</div>
-    </div>
-    <span>🎧</span>
-  </div>
+  <div class="player-title" id="nowPlaying">Choose a sample track</div>
+  <div class="player-sub" id="artist">OpenTune demo player</div>
   <audio id="audio" controls preload="none">
-    <source id="audioSource"
-      src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-      type="audio/mpeg">
-    Your browser does not support audio playback.
+    <source id="audioSource" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support audio.
   </audio>
 </div>
 
 <script>
-const samples = [
-  {title:"Golden Hour", file:1},
-  {title:"Blue Horizon", file:2},
-  {title:"Neon Nights", file:3},
-  {title:"Soft Clouds", file:4},
-  {title:"Deep Focus", file:5},
-  {title:"Sunrise Drive", file:6}
+const samples=[
+  {title:"Golden Hour",file:1},
+  {title:"Blue Horizon",file:2},
+  {title:"Neon Nights",file:3},
+  {title:"Soft Clouds",file:4},
+  {title:"Deep Focus",file:5},
+  {title:"Sunrise Drive",file:6}
 ];
+const audio=document.getElementById("audio");
+const source=document.getElementById("audioSource");
 
-const audio = document.getElementById("audio");
-const source = document.getElementById("audioSource");
-const nowPlaying = document.getElementById("nowPlaying");
-const artist = document.getElementById("artist");
-
-function playTrack(index) {
-  const track = samples[index];
-  if (!track) return;
-  source.src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-" +
-    track.file + ".mp3";
+function playTrack(index){
+  const track=samples[index];
+  if(!track)return;
+  document.getElementById("nowPlaying").textContent=track.title;
+  document.getElementById("artist").textContent="SoundHelix demo audio";
+  source.src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-"+track.file+".mp3";
   audio.load();
-  nowPlaying.textContent = track.title;
-  artist.textContent = "SoundHelix sample audio";
-  audio.play().catch(() => {
-    artist.textContent = "Tap Play in the audio controls to try again.";
+  audio.play().catch(()=>{
+    document.getElementById("artist").textContent="Tap Play in the audio controls to try again.";
   });
 }
-
-document.querySelectorAll("[data-song]").forEach(button => {
-  button.addEventListener("click", () => playTrack(Number(button.dataset.song)));
+document.querySelectorAll("[data-song]").forEach(button=>{
+  button.addEventListener("click",()=>playTrack(Number(button.dataset.song)));
 });
+document.getElementById("featured").addEventListener("click",()=>playTrack(0));
 
-document.getElementById("featured").addEventListener("click", () => playTrack(0));
+let mood="All";
+const search=document.getElementById("search");
+const cards=[...document.querySelectorAll(".card")];
 
-let activeMood = "All";
-const search = document.getElementById("search");
-const cards = [...document.querySelectorAll(".card")];
-
-function filterTracks() {
-  const query = search.value.toLowerCase().trim();
-  let count = 0;
-  cards.forEach(card => {
-    const matchesText = card.dataset.title.toLowerCase().includes(query);
-    const matchesMood = activeMood === "All" ||
-      card.dataset.mood === activeMood;
-    card.hidden = !(matchesText && matchesMood);
-    if (!card.hidden) count++;
+function filterTracks(){
+  const query=search.value.toLowerCase().trim();
+  let count=0;
+  cards.forEach(card=>{
+    const matchText=card.dataset.title.toLowerCase().includes(query);
+    const matchMood=mood==="All"||card.dataset.mood===mood;
+    card.hidden=!(matchText&&matchMood);
+    if(!card.hidden)count++;
   });
-  document.getElementById("noResults").hidden = count !== 0;
+  document.getElementById("noResults").hidden=count!==0;
 }
+search.addEventListener("input",filterTracks);
 
-search.addEventListener("input", filterTracks);
-
-document.querySelectorAll("[data-filter]").forEach(button => {
-  button.addEventListener("click", () => {
-    activeMood = button.dataset.filter;
-    document.querySelectorAll("[data-filter]").forEach(chip => {
-      chip.classList.toggle("active", chip === button);
+document.querySelectorAll("[data-filter]").forEach(button=>{
+  button.addEventListener("click",()=>{
+    mood=button.dataset.filter;
+    document.querySelectorAll("[data-filter]").forEach(chip=>{
+      chip.classList.toggle("active",chip===button);
     });
     filterTracks();
   });
