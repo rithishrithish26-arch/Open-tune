@@ -140,7 +140,7 @@ function playTrack(index){
   if(!track)return;
   document.getElementById("nowPlaying").textContent=track.title;
   document.getElementById("artist").textContent="SoundHelix demo audio";
-  source.src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-"+track.file+".mp3";
+  source.src = track.url || ("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-" + track.file + ".mp3");
   audio.load();
   audio.play().catch(()=>{
     document.getElementById("artist").textContent="Tap Play in the audio controls to try again.";
